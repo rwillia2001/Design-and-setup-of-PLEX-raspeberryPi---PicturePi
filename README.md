@@ -1,5 +1,6 @@
 # Design-and-setup-of-PLEX-raspberryPi---PicturePi
 
+CanaKit Raspberry Pi 4 4GB Starter PRO Kit - 4GB RAM  (ordered Amazon May 2025).
 
 Fantastic outcome, actually 🙂
 Losing the image before you needed it — and deciding to re-image deliberately — is exactly how a well-run system evolves from “working” to “documented and resilient.”
