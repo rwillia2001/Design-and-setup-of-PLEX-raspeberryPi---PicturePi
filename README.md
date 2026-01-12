@@ -253,3 +253,164 @@ Add a one-page block diagram for the GitHub repo
 Or help you standardize this pattern for future Pi endpoints
 
 And yes — PHEW is exactly the right reaction. This is now clean, explicit, and future-proof.
+
+
+===============================================================================================
+
+
+
+Step 1: Download Win32 Disk Imager (official source)
+
+Open a browser
+
+Go to:
+
+https://sourceforge.net/projects/win32diskimager/
+
+
+Click Download
+
+You’ll get something like:
+
+win32diskimager-1.0.0-install.exe
+
+
+(SourceForge is the canonical distribution site for this tool.)
+
+Step 2: Install (30 seconds)
+
+Double-click the installer
+
+Accept defaults
+
+No special options needed
+
+Finish
+
+No reboot required.
+
+Step 3: Start Win32 Disk Imager
+
+In Windows 11:
+
+Press Start
+
+Type:
+
+Win32 Disk Imager
+
+
+Click the app
+
+💡 Important:
+If Windows asks, allow it to run as administrator (this is required to read disks).
+
+Step 4: Insert the Raspberry Pi SD card
+
+Insert the microSD card via USB adapter
+
+Wait for Windows to recognize it
+
+Ignore any “format disk” prompts — click Cancel
+
+Windows often doesn’t understand Pi filesystems. That’s normal.
+
+Step 5: Configure Win32 Disk Imager (READ mode)
+
+In the app:
+
+1️⃣ Image File
+
+Click the folder icon
+
+Choose where to save
+
+Name it:
+
+rpi-plexamp_2026-01.img
+
+2️⃣ Device
+
+Select the SD card drive letter (e.g. E: or F:)
+
+Double-check this
+
+It should match the SD card size
+
+3️⃣ Verify you are in READ mode
+
+You will see two buttons:
+
+Read
+
+Write
+
+We will use READ
+
+🚨 DO NOT CLICK WRITE
+
+Step 6: Take the image (this is the moment)
+
+Click Read
+
+Confirm the warning
+
+Let it run
+
+This will:
+
+Read every sector
+
+Create a full .img
+
+Take a few minutes
+
+If progress moves slowly — that’s normal.
+
+Step 7: Confirm success
+
+When done:
+
+You should see Read Successful
+
+The .img file will exist
+
+File size ≈ SD card size
+
+Step 8: (Strongly recommended) Create a checksum
+
+Open PowerShell in the folder where the image lives:
+
+Get-FileHash rpi-plexamp_2026-01.img -Algorithm SHA256 |
+  Out-File rpi-plexamp_2026-01.sha256
+
+
+This gives you cryptographic proof the image is intact.
+
+Step 9: Safely eject and test
+
+Safely eject SD card
+
+Put it back in the Pi
+
+Power on
+
+Test:
+
+ssh picturepi
+
+
+If SSH works, Plexamp works.
+
+What NOT to worry about
+
+Windows saying it can’t read the card ✔ normal
+
+Antivirus warnings ✔ unlikely, ignore if mild
+
+The word “Win32” ✔ legacy name, still correct
+
+Final reassurance (important)
+
+Win32 Disk Imager is used worldwide for Raspberry Pi backups.
+It is simple, explicit, and very hard to misuse if you only click READ.
