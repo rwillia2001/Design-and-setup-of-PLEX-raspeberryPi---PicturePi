@@ -1,4 +1,4 @@
-# Design-and-setup-of-PLEX-raspeberryPi---PicturePi
+# Design-and-setup-of-PLEX-raspberryPi---PicturePi
 
 
 Fantastic outcome, actually 🙂
