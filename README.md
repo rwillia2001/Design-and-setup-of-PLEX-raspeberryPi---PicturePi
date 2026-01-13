@@ -415,6 +415,8 @@ Final reassurance (important)
 Win32 Disk Imager is used worldwide for Raspberry Pi backups.
 It is simple, explicit, and very hard to misuse if you only click READ.
 
+The SD-card image is stored on Westmidlands2 under /mnt/sound/backups/rpi-plexamp/ and is the canonical recovery source.
+
 ============================================================================================
 
 
